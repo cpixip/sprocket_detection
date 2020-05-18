@@ -2,7 +2,7 @@
 
 A simple and sufficiently fast Python script to detect the sprocket position of a Super-8 frame. 
 
-The script relies on some assumptions in order to detect the sprocket effectively; if these assumptions are violated too much, the detection will fail. In this case, the input image is output unchanged. In this case, some more elaborate approach based for example on Hough-transforms is needed.
+The script relies on some assumptions in order to detect the sprocket effectively; if these assumptions are violated too much, the detection will fail. In this case, the input image is left unchanged. Some more elaborate approaches based for example on Hough-transforms migth be needed for general cases.
 
 Assumptions:
 
