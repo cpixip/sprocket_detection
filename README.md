@@ -17,4 +17,6 @@ A. Locate strong edges in a coarse way by starting from the other boundaries of 
 - Search for the edge boundaries starting from the found center of the sprocket.
 - Estimate from the found inner edges a more precise guess for the sprocket center.
 
+Included in the repository are three test files and the corresponding output the sprocket detection script should produce.
+
 More information can be obtained by the following <a href="https://forums.kinograph.cc/t/simple-super-8-sprocket-registration/1683?u=cpixip">KINOGRAPH forum thread</a>.
