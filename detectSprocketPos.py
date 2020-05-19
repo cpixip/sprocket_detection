@@ -5,11 +5,11 @@ import time
 ## simple sprocket detection algorithm
 ## returns the detected sprocket position
 ## relative to vertical scan center and left horizontal edge
-def detectSprocketPos(img, roi = [0.01,0.09,0.2,0.8],
-                           thresholds = [0.5,0.2],
-                           filterSize = 25,
-                           maxSize = 0.3,
-                           horizontal = False):
+def detectSprocketPos(img, roi = [0.01,0.09,0.2,0.8],       # region-of-interest - set as small as possible
+                           thresholds = [0.5,0.2],          # edge thresholds; first one higher, second one lower
+                           filterSize = 25,                 # smoothing kernel - leave it untouched
+                           minSize = 0.1,                   # min. relative sprocket size to be expected - used for checks
+                           horizontal = False):             # if you want a simple horizontal alignment as well
 
     ## inital preparations
     
@@ -102,8 +102,8 @@ def detectSprocketPos(img, roi = [0.01,0.09,0.2,0.8],
     # the outer boundaries detected. If so, not correction
     # is applied to the image
     sprocketSize    = innerHigh-innerLow
-    maxSprocketSize = int(maxSize*dy)
-    if sprocketSize>maxSize and sprocketSize<(outerHigh-outerLow) :
+    minSprocketSize = int(minSize*dy)
+    if minSprocketSize<sprocketSize and sprocketSize<(outerHigh-outerLow) :
         sprocketCenter = (innerHigh+innerLow)//2
     else:
         sprocketCenter = dy//2
